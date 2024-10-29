@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Göklerdeki Ağırlığınız</title>
+    <style>
+        body {
+            background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        p {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="kilo" placeholder="Your mass">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" id="calculate">Calculate</button>
+            </div>
+        </div>
+
+        <p>Earth: <span id='Earth'></span></p>
+
+        <p>Mercury : <span id='Mercury'></span></p>
+        <p>Mars : <span id='Mars'></span></p>
+        <p>Uranus : <span id='Uranus'></span></p>
+        <p>Venus : <span id='Venus'></span></p>
+        <p>Saturn : <span id='Saturn'></span></p>
+        <p>Neptune : <span id='Neptune'></span></p>
+        <p>Jupiter : <span id='Jupiter'></span></p>
+        <p>Sun : <span id='Sun'></span></p>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#calculate").click(function() {
+
+                var kilo = $("#kilo").val();
+                var yercekimi = 9.8;
+                var Earth = Math.round(kilo* (10));
+                var Mercury = Math.round(kilo * (3.7 ));
+                var Mars = Math.round(kilo * (3.711 ));
+
+                var Uranus = Math.round(kilo * (8.69 ));
+                var Venus = Math.round(kilo * (8.87 ));
+                var Saturn = Math.round(kilo * (10.44 ));
+                var Neptune = Math.round(kilo * (11.15));
+
+                var Jupiter = Math.round(kilo * (11.15 ));
+                var Sun = Math.round(kilo * (274 ));
+
+                $("#Earth").text(Earth + " N");
+                $("#Mercury").text(Mercury + " N");
+                $("#Mars").text(Mars + " N");
+                // diger gezenlerin hesaplarini burada yapacaksin...
+
+                $("#Uranus").text(Uranus + " N");
+                $("#Venus").text(Venus + " N");
+                $("#Saturn").text(Saturn + " N");
+                $("#Neptune").text(Neptune + " N");
+                $("#Jupiter").text(Jupiter + " N");
+                $("#Sun").text(Sun + " N");
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
